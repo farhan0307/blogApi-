@@ -14,14 +14,6 @@ class PostController extends Controller
     public  function WritePost(Request $request)
     {
 
-        // $rules = [
-        //     'title' => 'required|string',
-        //     'body' => 'required|string',
-        // ];
-        // $validator = Validator::make($request->all(), $rules);
-        // if ($validator->fails()) {
-        //     return response()->json(['error' => $validator->errors()], 400);
-        // }
         $post = Post::create([
             'title' => $request->input('title'),
             'body' => $request->input('body'),

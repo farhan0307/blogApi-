@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('role');
             $table->string('status');
             $table->rememberToken();
-            $table->timestamps(); // Created at and updated at timestamps
+            $table->timestamps(); // Created and updated at timestamps
         });
     }
 

@@ -11,16 +11,12 @@ class CommentController extends Controller
 {
     public function WriteComment(Request $request)
     {
-         // Validate the Request
-        $post = Post::find($request->input('postid'));
-        if (!$post) {
-            return response()->json(['error' => 'Post not found'], 404);
-        }
-        $request->validate([
-            'name' => 'string',
-            'body' => 'required|string',
-            'postid' => 'required|exists:posts,id',
-        ]);
+        
+
+         $post = Post::find($request->input('postid'));
+    if (!$post) {
+        return response()->json(['error' => 'Post not found'], 404);
+    }
         Comment::create([
             'name' => $request->input('name'),
             'body' => $request->input('body'),
